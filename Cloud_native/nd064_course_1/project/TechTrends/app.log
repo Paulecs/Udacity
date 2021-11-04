@@ -1,0 +1,12 @@
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:23:43] "GET / HTTP/1.1" 200 -
+INFO:app:<sqlite3.Row object at 0x00000296FE2A5CD0> Article retrieved
+INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:23:47] "GET /1 HTTP/1.1" 200 -
+INFO:app:The About Us page is retrieved.
+INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:23:56] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:23:58] "GET /create HTTP/1.1" 200 -
+INFO:app:New Post Article created
+INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:24:13] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:24:13] "GET / HTTP/1.1" 200 -
+INFO:app:<sqlite3.Row object at 0x00000296FE2A5E30> Article retrieved
+INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:24:25] "GET /15 HTTP/1.1" 200 -
