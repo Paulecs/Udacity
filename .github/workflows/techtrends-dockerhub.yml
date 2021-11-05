@@ -28,8 +28,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./nd064_course_1/project
-          file: ./nd064_course_1/project/Dockerfile
+          context: ./Cloud_native/nd064_course_1/project
+          file: ./Cloud_native/nd064_course_1/project/Dockerfile
           platforms: linux/amd64
           push: true
           tags: paulecs/techtrends:latest
