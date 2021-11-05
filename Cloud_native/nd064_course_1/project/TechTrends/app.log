@@ -10,3 +10,23 @@ INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:24:13] "POST /create HTTP/1.1" 302 -
 INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:24:13] "GET / HTTP/1.1" 200 -
 INFO:app:<sqlite3.Row object at 0x00000296FE2A5E30> Article retrieved
 INFO:werkzeug:127.0.0.1 - - [01/Nov/2021 05:24:25] "GET /15 HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:13:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:13:55] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:13:55] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:The About Us page is retrieved.
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:13:59] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:14:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:14:04] "GET /create HTTP/1.1" 200 -
+INFO:app:New Tech Trends  Article created
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:14:25] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:14:25] "GET / HTTP/1.1" 200 -
+INFO:app:Status request successful
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:14:36] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:14:42] "GET /metrics HTTP/1.1" 200 -
+INFO:app:<sqlite3.Row object at 0x00000232CB98D450> Article retrieved
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:15:04] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:15:07] "GET / HTTP/1.1" 200 -
+INFO:app:<sqlite3.Row object at 0x00000232CB98D770> Article retrieved
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:15:08] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:15:14] "GET /metrics HTTP/1.1" 200 -
