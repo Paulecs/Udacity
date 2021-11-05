@@ -2,10 +2,12 @@ import sqlite3
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
+from collections import defaultdict
 
 import logging
 import sys
 import os
+
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
@@ -84,7 +86,7 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-      app.logger.info("%s The Article requested does not exixt")
+      app.logger.info("%s The Article requested does not exist")
       return render_template('404.html'), 404
     else:
       return render_template('post.html', post=post)
@@ -92,7 +94,7 @@ def post(post_id):
 # Define the About Us page
 @app.route('/about')
 def about():
-    app.logger.info("The About Us page is retrieved.")
+    app.logger.info('The "About Us page" is retrieved.')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -118,8 +120,38 @@ def create():
 # start the application on port 3111
 if __name__ == "__main__":
 
-  # format output
-    format_output = ('%(levelname)s: %(name)s: %(asctime)s -   %(message)s') # formatting output here
-    logging.basicConfig(level=logging.DEBUG, filename="app.log")
+#Set up logging
+    logger = logging.getLogger('app_logger')
+
+    #Set loglevel to an Environment Variable
+    loglevel = os.getenv("APP_LOGGERLEVEL", "DEBUG").upper()
+
+    #Define logging output by loglevel and Assign handlers
+    loglevel = (
+        getattr(logging, loglevel)
+        if loglevel in ["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"]
+        else logging.DEBUG
+        )
+    # standard_out (stdout)
+    standard_out = logging.StreamHandler(sys.stdout)
+
+    #Set the lowest threshold that gets logged to stdout
+    standard_out.setLevel(loglevel)
+
+    #standard_error (stderr)
+    standard_error = logging.StreamHandler(sys.stderr)
+
+    #Set the lowest threshold that gets logged to stderr
+    standard_error.setLevel(logging.ERROR)
+
+    #Add handlers to our logger
+    logger.addHandler(standard_out)
+    logger.addHandler(standard_error)
+
+    handlers = [standard_out, standard_error]
+
+    #Assign logging defaults
+    logging.basicConfig(level = logging.DEBUG,
+        handlers=handlers, format='%(levelname)s:%(name)s: %(asctime)s,  %(message)s')
 
     app.run(host='0.0.0.0', port='3111')
