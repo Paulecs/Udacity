@@ -1,4 +1,4 @@
-##  Named of the workflow.
+##  Name of the workflow.
 name: Pytest
 
 ## Set the trigger policy.

@@ -1,4 +1,4 @@
-##  Named of the workflow.
+##  Name of the workflow.
 name: Python version
 ## Set the trigger policy.
 ## In this case, the workflow is execute on a `push` event,
@@ -21,3 +21,4 @@ jobs:
       - uses: actions/setup-python@v2
       ## Executes the `python --version` command
       - run: python --version
+      
