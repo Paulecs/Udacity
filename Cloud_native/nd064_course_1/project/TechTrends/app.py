@@ -24,7 +24,7 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
                         (post_id,)).fetchone()
     connection.close()
-    app.logger.info("%s Article retrieved", post)
+    app.logger.info('%s Article "{}" is retrieved'.format(post[title])
     return post
 
 # Define the Flask application
@@ -101,7 +101,7 @@ def create():
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['content']
-        app.logger.info("%s Article created", title)
+        app.logger.info("Article; '{}' is created".format(title))
         if not title:
             flash('Title is required!')
         else:
