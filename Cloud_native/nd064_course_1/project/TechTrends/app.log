@@ -30,3 +30,150 @@ INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:15:07] "GET / HTTP/1.1" 200 -
 INFO:app:<sqlite3.Row object at 0x00000232CB98D770> Article retrieved
 INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:15:08] "GET /3 HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:15:14] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:31:32] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:31:38] "GET / HTTP/1.1" 200 -
+ERROR:app:Exception on /1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 85, in post
+    post = get_post(post_id)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 27, in get_post
+    app.logger.info('%s Article "{}" is retrieved'.format(post[title]))
+NameError: name 'title' is not defined
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:31:41] "GET /1 HTTP/1.1" 500 -
+ERROR:app:Exception on /2 [GET]
+Traceback (most recent call last):
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 85, in post
+    post = get_post(post_id)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 27, in get_post
+    app.logger.info('%s Article "{}" is retrieved'.format(post[title]))
+NameError: name 'title' is not defined
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:31:49] "GET /2 HTTP/1.1" 500 -
+INFO:app:The About Us page is retrieved.
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:31:55] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:31:58] "GET /create HTTP/1.1" 200 -
+INFO:app:Article; 'new' is created
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:32:09] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:32:09] "GET / HTTP/1.1" 200 -
+ERROR:app:Exception on /1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 85, in post
+    post = get_post(post_id)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 27, in get_post
+    app.logger.info('%s Article "{}" is retrieved'.format(post[title]))
+NameError: name 'title' is not defined
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:32:12] "GET /1 HTTP/1.1" 500 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:33:10] "GET / HTTP/1.1" 200 -
+ERROR:app:Exception on /1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 85, in post
+    post = get_post(post_id)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 27, in get_post
+    app.logger.info('Article "{}" is retrieved'.format(post[title]))
+NameError: name 'title' is not defined
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:33:13] "GET /1 HTTP/1.1" 500 -
+ERROR:app:Exception on /1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 85, in post
+    post = get_post(post_id)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 27, in get_post
+    app.logger.info('Article "{}" is retrieved'.format(post[title]))
+NameError: name 'title' is not defined
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:33:16] "GET /1 HTTP/1.1" 500 -
+ERROR:app:Exception on /2 [GET]
+Traceback (most recent call last):
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\boypa\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 85, in post
+    post = get_post(post_id)
+  File "E:\courses\Udacity\Cloud_native\nd064_course_1\project\techtrends\app.py", line 27, in get_post
+    app.logger.info('Article "{}" is retrieved'.format(post[title]))
+NameError: name 'title' is not defined
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:33:22] "GET /2 HTTP/1.1" 500 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:Article "2020 CNCF Annual Report" is retrieved
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:14] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:18] "GET / HTTP/1.1" 200 -
+INFO:app:Article "KubeCon + CloudNativeCon 2021" is retrieved
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:20] "GET /2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:22] "GET / HTTP/1.1" 200 -
+INFO:app:The About Us page is retrieved.
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:24] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:28] "GET /create HTTP/1.1" 200 -
+INFO:app:Article; 'Article' is created
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:49] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:49] "GET / HTTP/1.1" 200 -
+INFO:app:Status request successful
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:37:55] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Nov/2021 01:38:01] "GET /metrics HTTP/1.1" 200 -
