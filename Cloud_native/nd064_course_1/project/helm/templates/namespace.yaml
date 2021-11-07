@@ -1,0 +1,6 @@
+#Set the Deployment API endoint and resource type
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace.name }}
+
