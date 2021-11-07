@@ -1,0 +1,46 @@
+#Set the API endpoint and 
+  ##define deployment resouce types
+apiVersion: apps/v1
+kind: Deployment
+## Set the deployment parameters and specifications
+metadata:
+  name: techtrends
+  namespace: sandbox
+  labels:
+    app: techtrends
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: techtrends
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: techtrends
+    spec:
+      containers:
+      - image: techtrends:latest
+        imagePullPolicy: IfNotPresent
+        name: techtrends
+        ports: 
+        - containerPort: 3111
+        livenessProbe:
+          path: /healthz
+          port: 3111
+        readinessProbe:
+          path: /healthz
+          port: 3111
+
+      resources:
+        requests:
+          cpu: "250m"
+          memory: "64Mi"
+        limits:
+          cpu: "500m"
+          memory: "128Mi"
+          
