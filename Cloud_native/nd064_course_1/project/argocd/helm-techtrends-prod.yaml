@@ -11,7 +11,7 @@ spec:
     path: Cloud_native/nd064_course_1/project/helm
     helm:
       valueFiles:
-      - values.prod.yaml
+      - values-prod.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
