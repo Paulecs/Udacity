@@ -10,7 +10,7 @@ service:
   type: clusterIP
 
 image:
-  repository: techtrends
+  repository: paulecs/techtrends
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -28,6 +28,8 @@ ports:
 
 livenessProbe:
   path: /healthz
+  port: 311
 
 readinessProbe:
-  path: / healthz
+  path: /healthz
+  port: 311
