@@ -31,7 +31,7 @@ spec:
           protocol: {{ .Values.service.protocol}}
         livenessProbe:
            httpGet:
-             path: {{ .Values.livenesProbe.path }}
+             path: {{ .Values.livenessProbe.path }}
              port: {{ .Values.livenessProbe.port }}
         readinessProbe:
            httpGet:
