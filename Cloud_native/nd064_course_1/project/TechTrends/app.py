@@ -26,7 +26,6 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
                         (post_id,)).fetchone()
     connection.close()
-    app.logger.info('Article; "{}" is retrieved'.format(post['title']))
     return post
 
 # Define the Flask application
@@ -86,9 +85,10 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-      app.logger.info("%s The Article requested does not exist")
+      app.logger.info("The Article requested does not exist")
       return render_template('404.html'), 404
     else:
+      app.logger.info('Article; "{}" is retrieved'.format(post['title']))
       return render_template('post.html', post=post)
 
 # Define the About Us page
