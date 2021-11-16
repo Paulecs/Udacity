@@ -44,7 +44,7 @@ def healthz():
     connection.close()
     response = app.response_class(
             response=json.dumps({"result":"OK - healthy"}),
-            status=200,
+            status = 200,
             mimetype='application/json'
     )
 
