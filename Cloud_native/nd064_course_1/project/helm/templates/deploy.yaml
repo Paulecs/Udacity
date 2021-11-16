@@ -11,11 +11,7 @@ spec:
   selector:
     matchLabels:
       app: {{ .Values.AppName }}
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+  strategy: {}
   template:
     metadata:
       creationTimestamp: null
@@ -44,4 +40,5 @@ spec:
           limits:
             cpu: {{ .Values.resources.limits.cpu}}
             memory: {{ .Values.resources.limits.memory}}
+
 
